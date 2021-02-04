@@ -1,0 +1,405 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>Price Guide</title>
+<link rel="stylesheet" href="ref2/fa/css/font-awesome.min.css">
+<link href="ref2/style-1.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="ref2/script-1.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+</head>
+
+<body>
+<!--PRICE-->
+<div class="page dTable" id="page0">
+  <div class="dTr">
+    <div class="dTd head noTop">S<br>
+      E<br>
+      R<br>
+      I<br>
+      E<br>
+      S</div>
+    <div id="btn00" class="dTd noTop" onclick="toggle(this.id);"> 500 </div>
+    <div id="btn01" class="dTd noTop" onclick="toggle(this.id);"> 600 </div>
+    <div id="btn02" class="dTd noTop" onclick="toggle(this.id);"> 700 </div>
+    <div id="btn03" class="dTd noTop" onclick="toggle(this.id);"> 800 </div>
+  </div>
+  <div class="dTr">
+    <div class="dTd head"> R<br>
+      E<br>
+      S<br>
+      O<br>
+      L<br>
+      U<br>
+      T<br>
+      I<br>
+      O<br>
+      N </div>
+    <div id="btn10" class="dTd" onclick="toggle(this.id);"> 5mp </div>
+    <div id="btn11" class="dTd" onclick="toggle(this.id);"> 10mp </div>
+    <div id="btn12" class="dTd" onclick="toggle(this.id);"> 50mp </div>
+    <div id="btn13" class="dTd" onclick="toggle(this.id);"> 100mp </div>
+  </div>
+  <div class="dTr">
+    <div class="dTd head"> Q<br>
+      U<br>
+      A<br>
+      N<br>
+      T<br>
+      I<br>
+      T<br>
+      Y </div>
+    <div id="btn20" class="dTd" onclick="toggle(this.id);"> 10 </div>
+    <div id="btn21" class="dTd" onclick="toggle(this.id);"> 20 </div>
+    <div id="btn22" class="dTd" onclick="toggle(this.id);"> 30 </div>
+    <div id="btn23" class="dTd" onclick="toggle(this.id);"> 40 </div>
+  </div>
+  <div class="dTr">
+    <div class="dTd head" id="options"> O<br>
+      P<br>
+      T<br>
+      I<br>
+      O<br>
+      N<br>
+      S</div>
+    <div id="btn30" class="dTd" onclick="toggleOpt(this.id);">Mono-<br>
+      chrome</div>
+    <div id="btn31" class="dTd" onclick="toggleOpt(this.id);">Standard</div>
+    <div id="btn32" class="dTd" onclick="toggleOpt(this.id);">PNP</div>
+    <div id="btn33" class="dTd" onclick="toggleCalc();"> <i class="fa fa-calculator fa-2x" aria-hidden="true"></i> </div>
+  </div>
+  <div class="dTr">
+    <div class="dTd head"> F<br>
+      O<br>
+      R<br>
+      M </div>
+    <div class="dTd" onClick="postPrice('up');"> <i class="fa fa-angle-up fa-lg" aria-hidden="true"></i></div>
+    <div class="dTd" onClick="postPrice('down');"> <i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></div>
+    <div id="btnRes" class="dTd" onClick="alertReset('alert')"> Reset </div>
+    <div id="btnSub" class="dTd" onclick="subOn('click');"> Submit </div>
+  </div>
+</div>
+<div id="lock1"><i class="fa fa-lock fa-4x" aria-hidden="true"></i></div>
+<div id="lock2"><i class="fa fa-lock fa-4x" aria-hidden="true"></i></div>
+<div id="lock3"><i class="fa fa-lock fa-4x" aria-hidden="true"></i></div>
+<!--/PRICE--> 
+<!--CALCULATOR-->
+<div id="calc">
+  <h2>Considerations</h2>
+  <table id="calcTable">
+    <tr>
+      <td>Company's Total Vision<br>
+        <span class="yellow">Potential</span></td>
+      <td id="calcOpt00" onClick="toggleCalcOpt(this.id)">Small</td>
+      <td id="calcOpt01" onClick="toggleCalcOpt(this.id)">Big</td>
+    </tr>
+    <tr>
+      <td>Commercial + Technical<br>
+        <span class="yellow">Advantage</span></td>
+      <td id="calcOpt10" onClick="toggleCalcOpt(this.id)">Major</td>
+      <td id="calcOpt11" onClick="toggleCalcOpt(this.id)">Minor</td>
+    </tr>
+    <tr>
+      <td>Short Term + Long Term<br>
+        <span class="yellow">Support</span></td>
+      <td id="calcOpt20" onClick="toggleCalcOpt(this.id)">High</td>
+      <td id="calcOpt21" onClick="toggleCalcOpt(this.id)">Low</td>
+    </tr>
+  </table>
+  <i class="fa fa-times fa-lg close" aria-hidden="true" onClick="toggleCalc()"></i> </div>
+<!--/CALCULATOR--> 
+<!--SYSTEM ESTIMATE-->
+<div class="page" id="estimate">
+  <h2>System Estimate</h2>
+  <table id="budget">
+    <tr>
+      <td>System Estimate:</td>
+      <td id="sysEst">sysEst</td>
+      <td rowspan="2" id="emailEst" onClick="emailGen(this.id)"><i class="fa fa-envelope" aria-hidden="true"></i> Email<br>
+        Estimate</td>
+    </tr>
+    <tr>
+      <td>Core Components:</td>
+      <td id="coreEst">coreSys</td>
+    </tr>
+  </table>
+  <hr>
+  <table id="coreSys">
+    <tr>
+      <th colspan="2">Core System</th>
+    </tr>
+    <tr>
+      <td id="coreSys1"></td>
+    </tr>
+    <tr>
+      <td id="coreSys2"></td>
+    </tr>
+    <tr>
+      <td id="coreSys3"></td>
+    </tr>
+    <tr>
+      <td id="coreSys4"></td>
+    </tr>
+    <tr>
+      <td id="coreSys5"></td>
+    </tr>
+    <tr>
+      <td id="coreSys6"></td>
+    </tr>
+  </table>
+  <table id="acc">
+    <tr>
+      <th colspan="2">Peripherals</th>
+    </tr>
+	      <tr>
+      <td><label class="switch">
+          <input id="acc5" onClick="toggleAcc(4)" type="checkbox" checked>
+          <span class="slider round"></span> </label></td>
+      <td>Stand 1</td>
+    </tr>
+    <tr>
+      <td><label class="switch">
+          <input id="acc1" onClick="toggleAcc(0)" type="checkbox">
+          <span class="slider round"></span> </label></td>
+      <td>Software 1000</td>
+    </tr>
+    <tr>
+      <td><label class="switch">
+          <input id="acc2" onClick="toggleAcc(1)" type="checkbox">
+          <span class="slider round"></span> </label></td>
+      <td>Power Supply</td>
+    </tr>
+    <tr>
+      <td><label class="switch">
+          <input id="acc3" onClick="toggleAcc(2)" type="checkbox">
+          <span class="slider round"></span> </label></td>
+      <td>I/O Cable</td>
+    </tr>
+    <tr>
+      <td><label class="switch">
+          <input id="acc4" onClick="toggleAcc(3)" type="checkbox">
+          <span class="slider round"></span> </label></td>
+      <td>Monitor</td>
+    </tr>
+    <tr>
+      <td><label class="switch">
+          <input id="acc6" onClick="toggleAcc(5)" type="checkbox">
+          <span class="slider round"></span> </label></td>
+      <td>Cover</td>
+    </tr>
+  </table>
+  <div id="reference" onClick="emailGen(this.id);"><i class="fa fa-floppy-o" aria-hidden="true"></i> Reference</div>
+  <div id="quote" onClick="sprCheck();"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Quote/SPR</div>
+  <div id="resetAll"  onClick="alertReset('alert')">Reset All</div>
+  <i class="fa fa-times fa-lg close" aria-hidden="true" onClick="pageView(0)"></i> </div>
+<!--/SYSTEM ESTIMATE--> 
+<!--SPR-->
+<div class="page" id="spr">
+  <h2>Special Price Request</h2>
+  <table>
+    <tr>
+      <td>Continue Type</td>
+      <td id="spr0" onClick="toggleSpr(0);">Continue</td>
+      <td id="spr1" onClick="toggleSpr(1);">This Time Only</td>
+    </tr>
+    <tr>
+      <td>Reason</td>
+      <td colspan="2;"><select id="sprReason" class="dropdown" value="Select Option">
+          <option selected="" value="">Select Option</option>
+          <option value="Competitor">Competitor</option>
+          <option value="Budget">Budget</option>
+          <option value="Claim">Claim</option>
+          <option value="Special disc. offered as service">Special disc. offered as service</option>
+          <option value="To match the Japanese price">To match the Japanese price</option>
+          <option value="Std. Disc. to Distributor/OEM">Std. Disc. to Distributor/OEM</option>
+          <option value="Not known (Old KJ#)">Not known (Old KJ#)</option>
+          <option value="Other reasons (See MEMO)">Other reasons (See MEMO)</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Purchase Date</td>
+      <td colspan="2"><input id="sprPurchaseDate" type="date" name="date" /></td>
+    </tr>
+    <tr>
+      <td>Account</td>
+      <td id="spr2" onClick="toggleSpr(2);">New</td>
+      <td id="spr3" onClick="toggleSpr(3);">Existing</td>
+    </tr>
+    <tr>
+      <td>Winning%</td>
+      <td colspan="2"><select id="sprWinning" class="dropdown">
+          <option selected="" value="">Select Option</option>
+          <option value="90%">90%</option>
+          <option value="70%">70%</option>
+          <option value="50%">50%</option>
+          <option value="25%">25%</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Limit Ship Quantity</td>
+      <td colspan="2"><select id="sprShipQty" class="dropdown">
+          <option selected="" value="">Min Qty required on every purchase</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Annual Quantity</td>
+      <td colspan="2"><select id="sprAnnualQty" class="dropdown">
+          <option selected="" value="">Estimated yearly Qty</option>
+          <option value="10">10+</option>
+          <option value="5">5+</option>
+          <option value="2">2+</option>
+          <option value="1">1</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Discount Reason</td>
+      <td colspan="2"><textarea id="sprDiscount" placeholder="Please provide additional details"></textarea>
+        <br></td>
+    </tr>
+    <tr>
+      <td onClick="alertReset('alert')">Reset All</td>
+      <td colspan="2" id="emailSpr"  onClick="emailGen(this.id);">Generate Email Template</td>
+    </tr>
+  </table>
+  <i class="fa fa-times fa-lg close" aria-hidden="true" onClick="pageView(3)"></i> </div>
+<!--/SPR--> 
+<!--SERIES-->
+<div class="page" id="page1">
+  <h2>500 Series</h2>
+  <i class="fa fa-times fa-lg close" aria-hidden="true" onClick="pageView(0)"></i>
+  <table>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>500</th>
+      <th>600</th>
+      <th>700</th>
+    </tr>
+    <tr>
+      <td>Position<br>
+        Adjustment</td>
+      <td><img src="ref2/images/frm/1.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+    </tr>
+    <tr>
+      <td>Graphic Display</td>
+      <td><img src="ref2/images/frm/9.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+    </tr>
+    <tr>
+      <td>Mathematical<br>
+        Operations</td>
+      <td><img src="ref2/images/frm/8.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+    </tr>
+    <tr>
+      <td>Presence/<br>
+        Absence</td>
+      <td><img src="ref2/images/frm/10.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Alignment</td>
+      <td><img src="ref2/images/frm/5.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ID &<br>
+        OCR/OCV</td>
+      <td><img src="ref2/images/frm/2.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Function List</td>
+      <td><img src="ref2/images/frm/6.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Measurement&nbsp&<br>
+        Dimensions</td>
+      <td><img src="ref2/images/frm/4.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+    </tr>
+    <tr>
+      <td>Flaw Detection</td>
+      <td><img src="ref2/images/frm/7.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Count</td>
+      <td><img src="ref2/images/frm/3.png"></td>
+      <td><i class="fa fa-check-circle-o fa-lg" aria-hidden="true"></i></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <h3>Full &#183 Reader &#183 Measurement</h3>
+</div>
+<!--/SERIES--> 
+<!--COMPETITOR-->
+<div class="page" id="page2">
+  None
+</div>
+<!--/COMPETITOR--> 
+<!--TOOLBOX-->
+<div class="footer"> <a href="#" onClick="pageView(0);"><i class="fa fa-money" aria-hidden="true"></i> Price</a> <a href="#" onClick="pageView(1);"><i class="fa fa-list-alt" aria-hidden="true"></i> Series</a> </div>
+<div class="dTool"> <i class="fa fa-wrench" aria-hidden="true"></i> </div>
+<!--/TOOLBOX--> 
+<!--RESET-->
+<div id="shield"></div>
+<div id="msgReset">
+  <h2>Reset</h2>
+  <p>Are you sure you want to clear all data?</p>
+  <table>
+    <tr>
+      <td onClick="alertReset('cancel')">Keep Data</td>
+      <td onClick="alertReset('reset')">Clear Data</td>
+    </tr>
+  </table>
+</div>
+<!--/RESET--> 
+<!--ZOOM ALERT-->
+<div class="page" id="zoomed">
+  <h2>Please Update Settings</h2>
+  <ol>
+    <li>Open Settings<br>
+      <img src="ref2/images/01.png"></li>
+    <li>Select Display & Brightness<br>
+      <img src="ref2/images/02.png"></li>
+    <li>Select View<br>
+      <img src="ref2/images/03.png"></li>
+    <li>Select Standard<br>
+      <img src="ref2/images/04.png"></li>
+    <li>Reload</li>
+  </ol>
+</div>
+<!--/ZOOM ALERT-->
+</body>
+</html>
