@@ -55,10 +55,10 @@ function checkAcc() {
 }
 
 function zoom() {
-	var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-	if (w < 400) {
-		document.getElementById("zoomed").style.visibility = "visible";
-	}
+	// var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+	// if (w < 400) {
+	// 	document.getElementById("zoomed").style.visibility = "visible";
+	// }
 }
 window.onload = zoom;
 
